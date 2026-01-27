@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pandas
+numpy
+langchain
+langchain-google-genai
+google-generativeai
+pydantic
+python-multipart
+openpyxl
+pyarrow

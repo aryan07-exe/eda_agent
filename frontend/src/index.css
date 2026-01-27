@@ -1,0 +1,125 @@
+@layer base {
+  html {
+    font-size: 80%;
+    scroll-behavior: smooth;
+    background: #0f172a;
+  }
+
+  :root {
+    --bg-main: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-glass: rgba(30, 41, 59, 0.7);
+    --primary: #ef4444;
+    /* Modern Red */
+    --primary-hover: #dc2626;
+    --text-high: #f8fafc;
+    --text-mid: #94a3b8;
+    --text-low: #64748b;
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --border-accent: rgba(239, 68, 68, 0.2);
+
+    --shadow-pro: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-high);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Base Styles */
+.glass-effect {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.card-vantage {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-pro);
+}
+
+.card-vantage:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Markdown Styles for Official View */
+.markdown-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.markdown-content th {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.markdown-content td {
+  padding: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.markdown-content code {
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.bento-card {
+  @apply card-vantage p-5;
+}
+
+.bg-dot-mesh {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
