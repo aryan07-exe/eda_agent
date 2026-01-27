@@ -14,9 +14,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title="AutoEDA Intelligence Engine",
+    title="Analytix Intelligence Engine",
     description="Automated exploratory data analysis with AI-powered visualization suggestions.",
-    version="2.0.0"
+    version="2.1.0"
 )
 
 @app.exception_handler(StarletteHTTPException)

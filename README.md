@@ -1,6 +1,6 @@
-# Aether EDA Pro 🚀
+# Analytix EDA 🚀
 
-A sophisticated Automated Exploratory Data Analysis (EDA) engine with a premium React frontend and a FastAPI backend powered by Gemini 2.0 Flash.
+Analytix is a professional Automated Exploratory Data Analysis (EDA) engine with a clean, official interface and a powerful FastAPI backend.
 
 ## 📁 Project Structure
 
