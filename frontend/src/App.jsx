@@ -187,26 +187,22 @@ const App = () => {
                     <AnimatePresence mode="wait">
                         {!data ? (
                             <motion.div key="landing" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="min-h-[70vh] flex flex-col items-center justify-center text-center">
-                                <motion.div animate={{ rotate: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 4 }} className="mb-12">
-                                    <div className="w-24 h-24 bg-indigo-600/10 rounded-3xl border border-indigo-500/20 flex items-center justify-center shadow-2xl">
-                                        <BrainCircuit className="w-12 h-12 text-indigo-500" />
-                                    </div>
-                                </motion.div>
-                                <h1 className="text-6xl lg:text-8xl font-black tracking-tightest text-shiny mb-6 leading-[0.9]">ANALYTICAL <br /> <span className="text-indigo-500">SYNTHESIS.</span></h1>
-                                <p className="text-lg text-zinc-500 max-w-2xl mx-auto mb-16 font-medium leading-relaxed">Sophisticated automated exploratory data analysis for modern enterprises. Insights at the velocity of light.</p>
 
-                                <div className="w-full max-w-lg">
+                                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">Analyze your data <span className="text-indigo-500">instantly.</span></h1>
+                                <p className="text-lg text-zinc-400 max-w-xl mx-auto mb-12">Simply upload your file to get automated insights and beautiful charts in seconds.</p>
+
+                                <div className="w-full max-w-md">
                                     <input type="file" id="dataFile" className="hidden" onChange={handleFileUpload} accept=".csv,.xlsx,.xls,.json" />
                                     <motion.div
                                         whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}
                                         onClick={() => document.getElementById('dataFile').click()}
                                         className="cursor-pointer glass-surface p-10 rounded-2xl border border-white/10 group transition-all"
                                     >
-                                        <div className="w-20 h-20 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 group-hover:text-indigo-500 transition-all border border-indigo-500/20 mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 duration-500">
-                                            <Upload className="w-10 h-10" />
+                                        <div className="w-16 h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 group-hover:text-indigo-500 transition-all border border-indigo-500/20 mx-auto mb-6 group-hover:scale-110 duration-500">
+                                            <Upload className="w-8 h-8" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white mb-3">Initialize Analysis</h3>
-                                        <p className="text-[10px] text-zinc-500 font-black uppercase tracking-[0.3em]">CSV · EXCEL · JSON</p>
+                                        <h3 className="text-xl font-bold text-white mb-2">Click to upload your file</h3>
+                                        <p className="text-xs text-zinc-500 font-medium">Supports CSV, Excel, and JSON</p>
                                     </motion.div>
                                     {loading && (
                                         <div className="mt-8 flex items-center justify-center gap-4 text-zinc-400">

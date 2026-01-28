@@ -49,6 +49,6 @@ app.add_middleware(
 
 app.include_router(router)
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
     return {"status": "ready", "engine": "AutoEDA v2.0"}
