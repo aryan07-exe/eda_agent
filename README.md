@@ -47,5 +47,4 @@ npm run dev
 - **AI Analyst Chat**: Precise, data-aware floating assistant for deep dives.
 - **Focus Mode**: Expand any chart for detailed inspection.
 
-## 🛡️ License
-Proprietary - Enterprise Intelligence Engine
+Check it out nd give feedbacks
