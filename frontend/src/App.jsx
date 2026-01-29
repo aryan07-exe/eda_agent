@@ -20,7 +20,7 @@ ChartJS.register(
     ArcElement, Title, Tooltip, Legend, Filler
 );
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_;
 
 const App = () => {
     const [data, setData] = useState(null);
