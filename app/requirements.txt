@@ -9,4 +9,4 @@ pydantic
 python-multipart
 openpyxl
 pyarrow
-dotenv
+python-dotenv

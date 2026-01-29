@@ -20,7 +20,7 @@ ChartJS.register(
     ArcElement, Title, Tooltip, Legend, Filler
 );
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://eda-agent-61nx.onrender.com";
 
 const App = () => {
     const [data, setData] = useState(null);
@@ -47,8 +47,12 @@ const App = () => {
 
         try {
             const response = await fetch(`${API_URL}/analyze`, { method: 'POST', body: formData });
-            if (!response.ok) throw new Error(await response.text());
             const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.detail || 'Analysis failed. Please check your file format.');
+            }
+
             setData(result);
             setChatMessages([{
                 role: 'bot',
@@ -79,9 +83,14 @@ const App = () => {
                 body: JSON.stringify({ context: data, question: input }),
             });
             const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.detail || result.error || "The AI is currently unavailable.");
+            }
+
             setChatMessages(prev => [...prev, { role: 'bot', content: result.answer }]);
         } catch (err) {
-            setChatMessages(prev => [...prev, { role: 'bot', content: "Connection lost. Please try again." }]);
+            setChatMessages(prev => [...prev, { role: 'bot', content: `**Error:** ${err.message}` }]);
         } finally {
             setIsTyping(false);
         }
